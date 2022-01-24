@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <a href="{{ path('cardCreation') }}" class="btn btn-primary pull-right">
+        Create <span class="fa fa-plus-circle"></span>
+    </a>
+    <h1>All Articles</h1>
+    <table class="table">
+        <thead style="background-color: #141E30">
+        <tr style="color: #f9ecec">
+            <th>Nazwa</th>
+            <th>Pochodzenie</th>
+        </tr>
+        </thead>
+        <tbody style="background-color: #243B55">
+        {% for card in cards %}
+            <tr>
+                <td><a href="{{ path('singleCard', {id: card.id}) }}">{{ card.nazwa }}</a></td>
+                <td>{{ card.pochodzenie }}</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

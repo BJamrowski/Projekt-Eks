@@ -1,0 +1,36 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <link rel="stylesheet" href="/css/style.css">
+    <div style="float: right">
+        <img src = "{{ '/uploads/'~card.image }}" style="width:275px; height: 370px;" alt="Brak obrazu">
+
+    </div>
+    <div style="float: left">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Opis</th>
+                <th scope="col">Pochodzenie</th>
+                <th scope="col">Koszt</th>
+                <th scope="col">Kolor</th>
+                <th scope="col">Autor</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ card.nazwa }}</td>
+                <td>{{ card.opis }}</td>
+                <td>{{ card.pochodzenie}}</td>
+                <td>{{ card.koszt }}</td>
+                <td>{{ card.kolor }}</td>
+                <td>{{ card.autor }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('main') }}" style="float: bottom">POWRÓT</a>
+
+{% endblock %}
